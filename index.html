@@ -1,0 +1,170 @@
+<html>
+    <head>
+        <title>Bank OCR kata - David Amaya</title>
+    </head>
+    <body>
+        <h1>Bank OCR kata - David Amaya</h1>
+        <p>
+            See the console for javascript.
+        </p>
+
+        <script src="bankOcr.js"></script>
+        <script>
+
+            const sampleDigit0 = " _ "+
+                                 "| |"+
+                                 "|_|";
+
+            const sampleDigit1 = "   "+
+                                "  |"+
+                                "  |";
+
+            const sampleDigit2 = " _ "+
+                                " _|"+
+                                "|_ ";
+
+            const sampleDigit3 = " _ "+
+                                " _|"+
+                                " _|";
+
+            const sampleDigit4 = "   "+
+                                "|_|"+
+                                "  |";
+
+            const sampleDigit5 = " _ "+
+                                "|_ "+
+                                " _|";
+
+            const sampleDigit6 = " _ "+
+                                "|_ "+
+                                "|_|";
+
+            const sampleDigit7 = " _ "+
+                                "  |"+
+                                "  |";
+
+            const sampleDigit8 = " _ "+
+                                "|_|"+
+                                "|_|";
+
+            const sampleDigit9 = " _ "+
+                                "|_|"+
+                                " _|";
+            
+
+
+
+
+            //sampleText0: expected result => 000000000
+            const sampleText0 = " _  _  _  _  _  _  _  _  _ "+
+                                "| || || || || || || || || |"+
+                                "|_||_||_||_||_||_||_||_||_|";
+            const expectedResult0 = "000000000";
+
+            //sampleText1: expected result => 111111111
+            const sampleText1 = "                           "+
+                                "  |  |  |  |  |  |  |  |  |"+
+                                "  |  |  |  |  |  |  |  |  |";
+            const expectedResult1 = "111111111";
+
+            //sampleText2: expected result => 222222222
+            const sampleText2 = " _  _  _  _  _  _  _  _  _ "+
+                                " _| _| _| _| _| _| _| _| _|"+
+                                "|_ |_ |_ |_ |_ |_ |_ |_ |_ ";
+            const expectedResult2 = "222222222";
+
+            //sampleText3: expected result => 333333333
+            const sampleText3 = " _  _  _  _  _  _  _  _  _ "+
+                                " _| _| _| _| _| _| _| _| _|"+
+                                " _| _| _| _| _| _| _| _| _|";
+            const expectedResult3 = "333333333";
+
+            //sampleText4: expected result => 444444444
+            const sampleText4 = "                           "+
+                                "|_||_||_||_||_||_||_||_||_|"+
+                                "  |  |  |  |  |  |  |  |  |";
+            const expectedResult4 ="444444444";
+
+            //sampleText5: expected result => 555555555
+            const sampleText5 = " _  _  _  _  _  _  _  _  _ "+
+                                "|_ |_ |_ |_ |_ |_ |_ |_ |_ "+
+                                " _| _| _| _| _| _| _| _| _|";
+            const expectedResult5 = "555555555";
+            
+            //sampleText6: expected result => 666666666
+            const sampleText6 = " _  _  _  _  _  _  _  _  _ "+
+                                "|_ |_ |_ |_ |_ |_ |_ |_ |_ "+
+                                "|_||_||_||_||_||_||_||_||_|";
+            const expectedResult6 = "666666666";
+
+            //sampleText7: expected result => 777777777
+            const sampleText7 = " _  _  _  _  _  _  _  _  _ "+
+                                "  |  |  |  |  |  |  |  |  |"+
+                                "  |  |  |  |  |  |  |  |  |";
+            const expectedResult7 = "777777777";
+
+            //sampleText8: expected result => 888888888
+            const sampleText8 = " _  _  _  _  _  _  _  _  _ "+
+                                "|_||_||_||_||_||_||_||_||_|"+
+                                "|_||_||_||_||_||_||_||_||_|";
+            const expectedResult8 = "888888888";
+
+            //sampleText9: expected result => 999999999
+            const sampleText9 = " _  _  _  _  _  _  _  _  _ "+
+                                "|_||_||_||_||_||_||_||_||_|"+
+                                " _| _| _| _| _| _| _| _| _|";
+            const expectedResult9 = "999999999";
+
+
+            //sampleText10: expected result => 123456789"
+            const sampleText10 = "    _  _     _  _  _  _  _ "+
+                                 "  | _| _||_||_ |_   ||_||_|"+
+                                 "  ||_  _|  | _||_|  ||_| _|";
+            const expectedResult10 = "123456789"; 
+
+
+            console.log("parseSingleDigit tests");
+            console.log("0: "+(parseSingleDigit(sampleDigit0)== 0));
+            console.log("1: "+(parseSingleDigit(sampleDigit1)== 1));
+            console.log("2: "+(parseSingleDigit(sampleDigit2)== 2));
+            console.log("3: "+(parseSingleDigit(sampleDigit3)== 3));
+            console.log("4: "+(parseSingleDigit(sampleDigit4)== 4));
+            console.log("5: "+(parseSingleDigit(sampleDigit5)== 5));
+            console.log("6: "+(parseSingleDigit(sampleDigit6)== 6));
+            console.log("7: "+(parseSingleDigit(sampleDigit7)== 7));
+            console.log("8: "+(parseSingleDigit(sampleDigit8)== 8));
+            console.log("9: "+(parseSingleDigit(sampleDigit9)== 9));
+            console.log("parseBankOcr tests");
+            console.log("0: "+(parseBankOcr(sampleText0)== expectedResult0));
+            console.log("1: "+(parseBankOcr(sampleText1)== expectedResult1));
+            console.log("2: "+(parseBankOcr(sampleText2)== expectedResult2));
+            console.log("3: "+(parseBankOcr(sampleText3)== expectedResult3));
+            console.log("4: "+(parseBankOcr(sampleText4)== expectedResult4));
+            console.log("5: "+(parseBankOcr(sampleText5)== expectedResult5));
+            console.log("6: "+(parseBankOcr(sampleText6)== expectedResult6));
+            console.log("7: "+(parseBankOcr(sampleText7)== expectedResult7));
+            console.log("8: "+(parseBankOcr(sampleText8)== expectedResult8));
+            console.log("9: "+(parseBankOcr(sampleText9)== expectedResult9));
+            console.log("10: "+(parseBankOcr(sampleText10)== expectedResult10));
+
+
+
+            console.log("AccountNumberChecksum tests");
+            console.log("0: "+accountNumberChecksum(parseBankOcr(sampleText0)));
+            console.log("1: "+accountNumberChecksum(parseBankOcr(sampleText1)));
+            console.log("2: "+accountNumberChecksum(parseBankOcr(sampleText2)));
+            console.log("3: "+accountNumberChecksum(parseBankOcr(sampleText3)));
+            console.log("4: "+accountNumberChecksum(parseBankOcr(sampleText4)));
+            console.log("5: "+accountNumberChecksum(parseBankOcr(sampleText5)));
+            console.log("6: "+accountNumberChecksum(parseBankOcr(sampleText6)));
+            console.log("7: "+accountNumberChecksum(parseBankOcr(sampleText7)));
+            console.log("8: "+accountNumberChecksum(parseBankOcr(sampleText8)));
+            console.log("9: "+accountNumberChecksum(parseBankOcr(sampleText9)));
+            console.log("10: "+accountNumberChecksum(parseBankOcr(sampleText10)));
+
+
+
+
+        </script>
+    </body>
+</html>
